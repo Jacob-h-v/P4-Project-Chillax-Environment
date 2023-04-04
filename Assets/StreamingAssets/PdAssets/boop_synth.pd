@@ -40,7 +40,7 @@
 #X obj 291 498 *~;
 #X obj 264 454 *~ 1;
 #X obj 470 442 osc~;
-#X obj 305 560 *~ 1.4;
+#X obj 305 560 *~ 1;
 #X connect 1 0 33 0;
 #X connect 2 0 1 1;
 #X connect 3 0 5 0;
