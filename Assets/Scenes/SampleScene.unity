@@ -2367,7 +2367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 445910, guid: c63ea781a273235439e583799176c846, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0949158e-18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 445910, guid: c63ea781a273235439e583799176c846, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5154,6 +5154,7 @@ GameObject:
   - component: {fileID: 2094475874}
   - component: {fileID: 2094475876}
   - component: {fileID: 2094475877}
+  - component: {fileID: 2094475878}
   m_Layer: 0
   m_Name: Capsulius
   m_TagString: Untagged
@@ -5282,6 +5283,22 @@ MonoBehaviour:
   canvas: {fileID: 1542074099}
   speed: 1
   playerObject: {fileID: 2094475873}
+--- !u!114 &2094475878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094475869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10176384ad6fd8f4392e74c950437bd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentPan: 0
+  enableAutoPan: 1
+  autoPanSpeed: 0.8
+  aSource: {fileID: 1814647341}
 --- !u!1 &2140408659
 GameObject:
   m_ObjectHideFlags: 0
