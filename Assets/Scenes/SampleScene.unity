@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -631,6 +631,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree02
       objectReference: {fileID: 0}
+    - target: {fileID: 123896, guid: c63ea781a273235439e583799176c846, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 445910, guid: c63ea781a273235439e583799176c846, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -788,9 +792,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68aff0aa73b458438eed9566ddf66d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patchName: boop_synth
+  patchName: Ambient Music
   patchDir: /PdAssets/
-  patch: {fileID: 102900000, guid: 97ca722a70026d64c98e733eb1320cf2, type: 3}
+  patch: {fileID: 102900000, guid: 99b8e05afd868c248a199c6d18f37fe9, type: 3}
   pipePrintToConsole: 0
   pureDataEvents:
     Bang:
@@ -1166,6 +1170,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bush01
       objectReference: {fileID: 0}
+    - target: {fileID: 108544, guid: d638ef2ca2fe20c4c9c08e125692d3f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 472700, guid: d638ef2ca2fe20c4c9c08e125692d3f4, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1319,6 +1327,10 @@ PrefabInstance:
     - target: {fileID: 162742, guid: d15b44addf30da74f946086ec0aa993c, type: 3}
       propertyPath: m_Name
       value: bush04
+      objectReference: {fileID: 0}
+    - target: {fileID: 162742, guid: d15b44addf30da74f946086ec0aa993c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 485560, guid: d15b44addf30da74f946086ec0aa993c, type: 3}
       propertyPath: m_RootOrder
