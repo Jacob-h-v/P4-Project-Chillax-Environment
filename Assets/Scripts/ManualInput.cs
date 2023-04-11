@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ManualInput : MonoBehaviour
 {
+    [SerializeField] private GameObject canvas;
     private float moveAD;
     private float moveWS;
     //private float gravity = -20f;
@@ -38,5 +39,9 @@ public class ManualInput : MonoBehaviour
 
         playerObject.Rotate(Vector3.up * speed * moveAD);
         playerObject.Rotate(Vector3.right * speed * moveWS);
+        if (Input.GetKey("escape"))
+        {
+            canvas.SetActive(true);
+        }
     }
 }
