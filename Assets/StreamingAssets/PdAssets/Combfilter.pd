@@ -1,0 +1,20 @@
+#N canvas 0 0 1538 770 10;
+#X obj 311 437 *~ 1;
+#X floatatom 402 367 5 0 0 0 - - -, f 5;
+#X obj 220 260 vsl 15 128 0 100 0 1 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 5100 1;
+#X obj 631 345 *~ 0.5;
+#X obj 310 181 inlet~;
+#X obj 311 486 outlet~;
+#X obj 173 225 inlet;
+#X obj 403 301 delwrite~ \$0-delay 1000;
+#X obj 403 394 delread~ \$0-delay 500;
+#X connect 0 0 5 0;
+#X connect 1 0 8 0;
+#X connect 2 0 1 0;
+#X connect 3 0 7 0;
+#X connect 4 0 0 0;
+#X connect 4 0 7 0;
+#X connect 6 0 2 0;
+#X connect 8 0 0 0;
+#X connect 8 0 3 0;

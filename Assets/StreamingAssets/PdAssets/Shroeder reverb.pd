@@ -1,4 +1,4 @@
-#N canvas -8 -8 1554 778 10;
+#N canvas 0 0 1538 770 10;
 #X obj 372 10 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
 #X msg 373 52 open clean.wav \, 1;
@@ -9,7 +9,7 @@
 #X obj 582 358 delread~ delayname1 500;
 #X floatatom 581 331 5 0 0 0 - - -, f 5;
 #X obj 1043 200 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 #fcfcfc
-#000000 #000000 4075 1;
+#000000 #000000 750 1;
 #X obj 810 309 *~ 0.5;
 #X obj 657 458 metro 100;
 #X obj 657 423 tgl 15 0 empty empty Graph\ output 17 7 0 10 #fcfcfc
@@ -40,7 +40,7 @@
 #X connect 11 0 0 0;
 #X connect 13 0 5 0;
 #X restore 144 411 pd Combfilter;
-#N canvas -8 -8 1538 795 AllPassFilter 0;
+#N canvas 0 0 1538 795 AllPassFilter 0;
 #X obj 708 480 metro 100;
 #X obj 708 445 tgl 15 0 empty empty Graph\ output 17 7 0 10 #fcfcfc
 #000000 #000000 0 1;
@@ -82,8 +82,8 @@
 #X obj 1028 206 readsf~;
 #X obj 1038 343 dac~;
 #X floatatom 220 377 5 0 0 0 - - -, f 5;
-#X obj 120 248 vsl 15 128 0 50 0 0 empty empty empty 0 -9 0 10 #fcfcfc
-#000000 #000000 8150 1;
+#X obj 120 248 vsl 15 128 0 50 0 1 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 1500 1;
 #N canvas 0 0 1538 795 Combfilter 0;
 #X obj 491 206 readsf~;
 #X obj 582 265 delwrite~ delayname1 1000;
@@ -91,7 +91,7 @@
 #X obj 582 358 delread~ delayname1 500;
 #X floatatom 581 331 5 0 0 0 - - -, f 5;
 #X obj 1043 200 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 #fcfcfc
-#000000 #000000 1750 1;
+#000000 #000000 2000 1;
 #X obj 810 309 *~ 0.5;
 #X obj 657 458 metro 100;
 #X obj 657 423 tgl 15 0 empty empty Graph\ output 17 7 0 10 #fcfcfc
@@ -123,8 +123,8 @@
 #X connect 13 0 5 0;
 #X restore 310 411 pd Combfilter;
 #X floatatom 386 377 5 0 0 0 - - -, f 5;
-#X obj 286 248 vsl 15 128 0 50 0 0 empty empty empty 0 -9 0 10 #fcfcfc
-#000000 #000000 3500 1;
+#X obj 286 248 vsl 15 128 0 50 0 1 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 4000 1;
 #N canvas 0 0 1538 795 Combfilter 0;
 #X obj 491 206 readsf~;
 #X obj 582 265 delwrite~ delayname1 1000;
@@ -132,7 +132,7 @@
 #X obj 582 358 delread~ delayname1 500;
 #X floatatom 581 331 5 0 0 0 - - -, f 5;
 #X obj 1043 200 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 #fcfcfc
-#000000 #000000 5200 1;
+#000000 #000000 3150 1;
 #X obj 810 309 *~ 0.5;
 #X obj 657 458 metro 100;
 #X obj 657 423 tgl 15 0 empty empty Graph\ output 17 7 0 10 #fcfcfc
@@ -164,8 +164,8 @@
 #X connect 13 0 5 0;
 #X restore 484 411 pd Combfilter;
 #X floatatom 560 377 5 0 0 0 - - -, f 5;
-#X obj 496 249 vsl 15 128 0 50 0 0 empty empty empty 0 -9 0 10 #fcfcfc
-#000000 #000000 10400 1;
+#X obj 496 249 vsl 15 128 0 50 0 1 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 6300 1;
 #N canvas 0 0 1538 795 Combfilter 0;
 #X obj 491 206 readsf~;
 #X obj 582 265 delwrite~ delayname1 1000;
@@ -173,7 +173,7 @@
 #X obj 582 358 delread~ delayname1 500;
 #X floatatom 581 331 5 0 0 0 - - -, f 5;
 #X obj 1043 200 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 #fcfcfc
-#000000 #000000 2500 1;
+#000000 #000000 4400 1;
 #X obj 810 309 *~ 0.5;
 #X obj 657 458 metro 100;
 #X obj 657 423 tgl 15 0 empty empty Graph\ output 17 7 0 10 #fcfcfc
@@ -205,12 +205,12 @@
 #X connect 13 0 5 0;
 #X restore 685 413 pd Combfilter;
 #X floatatom 753 380 5 0 0 0 - - -, f 5;
-#X obj 690 245 vsl 15 128 0 50 0 0 empty empty empty 0 -9 0 10 #fcfcfc
-#000000 #000000 5000 1;
-#X obj 721 522 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 2400 1;
-#X obj 720 582 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 7400 1;
+#X obj 690 245 vsl 15 128 0 50 0 1 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 8800 1;
+#X obj 721 522 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 4800 1;
+#X obj 720 582 hsl 128 15 0 100 0 1 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 5500 1;
 #X text 768 501 Delay;
 #X text 771 562 Gain;
 #N canvas 0 0 1538 795 AllPassFilter 0;
@@ -248,10 +248,10 @@
 #X connect 13 0 5 0;
 #X connect 14 0 6 0;
 #X restore 329 740 pd AllPassFilter;
-#X obj 718 658 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 9900 1;
-#X obj 722 736 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 4100 1;
+#X obj 718 658 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 6400 1;
+#X obj 722 736 hsl 128 15 0 100 0 1 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 6100 1;
 #X text 768 635 Delay;
 #X text 760 714 Gain;
 #X floatatom 464 555 5 0 0 0 - - -, f 5;
