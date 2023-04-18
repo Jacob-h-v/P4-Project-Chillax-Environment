@@ -1,4 +1,4 @@
-#N canvas 761 0 784 777 10;
+#N canvas 0 0 1538 770 10;
 #X obj 1464 -95 tgl 15 1 empty empty ON/OFF 17 7 0 10 #fcfcfc #000000
 #000000 1 1;
 #X obj 1464 -70 send ON;
@@ -31,7 +31,7 @@
 #X obj 1073 -155 loadbang;
 #X msg 1082 -119 1;
 #X obj 1173 -78 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X obj 1042 -475 receive ON;
 #X obj 1169 -361 receive whole_note;
 #X obj 989 -205 receive ON;
@@ -58,7 +58,7 @@
 #X text 479 -103 Clock Multiplication;
 #X obj 290 225 r Chord;
 #X obj 290 262 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X obj 290 285 sel 0;
 #X obj 290 324 bng 14 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
@@ -183,7 +183,7 @@
 #X obj 558 -231 /;
 #X obj 1270 536 receive~ Bass;
 #X obj 1405 413 receive~ Ambient_Pad;
-#X obj 1607 662 freeverb~;
+#X obj 1795 628 freeverb~;
 #X obj 1795 506 loadbang;
 #X obj 1868 508 loadbang;
 #X obj 1949 508 loadbang;
@@ -303,6 +303,9 @@
 #X obj 1405 680 dac~;
 #X obj 1405 515 NewShroederReverb;
 #X text 1472 376 Shroeders Reverb;
+#X obj 1333 413 loadbang;
+#X obj 1405 463 *~ 0.08;
+#X obj 1270 568 *~ 0.3;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X connect 3 0 102 0;
@@ -396,10 +399,8 @@
 #X connect 98 0 93 0;
 #X connect 100 0 80 0;
 #X connect 102 0 7 0;
-#X connect 103 0 115 0;
-#X connect 103 0 116 0;
-#X connect 104 0 115 0;
-#X connect 104 0 116 0;
+#X connect 103 0 162 0;
+#X connect 104 0 161 0;
 #X connect 106 0 109 0;
 #X connect 107 0 110 0;
 #X connect 108 0 111 0;
@@ -446,3 +447,9 @@
 #X connect 154 0 124 0;
 #X connect 155 0 124 0;
 #X connect 156 0 124 0;
+#X connect 158 0 115 0;
+#X connect 158 1 116 0;
+#X connect 160 0 158 0;
+#X connect 161 0 158 0;
+#X connect 162 0 115 0;
+#X connect 162 0 116 0;
