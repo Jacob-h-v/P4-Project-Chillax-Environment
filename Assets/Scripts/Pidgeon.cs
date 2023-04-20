@@ -11,10 +11,9 @@ public class Pidgeon : MonoBehaviour
 
     private float spatialBlendSetTo3D = 1;
     
-    public AudioClip takeOffSound;
 
 
-    //Detect when you use the toggle, ensures music isn’t played multiple times
+    
     private bool takingOff;
     
     private bool flyingBirds;
@@ -26,39 +25,39 @@ public class Pidgeon : MonoBehaviour
 
         StartCoroutine(PidgeonsTakingOff());
 
-
     }
 
 
     IEnumerator PidgeonsTakingOff()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSecondsRealtime(5);
 
         takingOff = true;
     }
-    
+
     // Update is called once per frame
     void Update()
     {
-        
+
 
         //Check to see if you just set the pidgeon take off toggle to positive
-        if (takingOff == true)
+        if (takingOff == true && flyingBirds == false)
         {
             pidgeonTakeOff.spatialBlend = spatialBlendSetTo3D;
-            pidgeonTakeOff.PlayOneShot(takeOffSound);
-            takingOff = false;
+            pidgeonTakeOff.Play();
+
             flyingBirds = true;
+            takingOff = false;
         }
 
-        if (flyingBirds == true && takingOff == false)
+        if (flyingBirds == true && takingOff == false && transform.position.y < 10)
         {
+            transform.Translate(Vector3.up * Time.deltaTime, Space.Self);
+            birdsChirping.spatialBlend = spatialBlendSetTo3D;
             birdsChirping.Play();
+            birdsChirping.loop = true;
         }
 
-        while (takingOff == true)
-        {
-
-        }
+      
     }
 }
