@@ -7,9 +7,12 @@ using System.IO.Ports;
 public class TestConnction : MonoBehaviour
 { 
     Thread IOThread = new Thread(DataThread);
-    private static SerialPort data_stream;
-    private static string incomingMsg = "";
-    private static string outgoingMsg = "";
+    private static SerialPort pulseStream;
+    private static SerialPort gyroStream;
+    private static string incomingPulseMsg = "";
+    private static string outgoingPulseMsg = "";
+    private static string incomingGyroMsg = "";
+    private static string outgoingGyroMsg = "";
     /*public string receivestring;
     public GameObject test_data;
     public Rigidbody rb;
@@ -19,25 +22,34 @@ public class TestConnction : MonoBehaviour
 
     private static void DataThread()
     {
-        data_stream = new SerialPort("COM3", 19200);
-        data_stream.Open();
+        pulseStream = new SerialPort("COM4", 115200);
+        // gyroStream = new SerialPort("COM5", 115200);
+        pulseStream.Open();
+        // gyroStream.Open();
 
         while(true)
         {
-            if (outgoingMsg != "")
+            if (outgoingPulseMsg != "")
             {
-                data_stream.Write(outgoingMsg);
-                outgoingMsg = "";
+                pulseStream.Write(outgoingPulseMsg);
+                outgoingPulseMsg = "";
             }
-            incomingMsg = data_stream.ReadExisting();
+            incomingPulseMsg = pulseStream.ReadExisting();
+            if (outgoingGyroMsg != "")
+            {
+                gyroStream.Write(outgoingGyroMsg);
+                outgoingGyroMsg = "";
+            }
+            // incomingGyroMsg = gyroStream.ReadExisting();
             Thread.Sleep(200);
         }
     }
 
-    private void OnDestroy()
+    void OnDestroy()
     {
         IOThread.Abort();
-        data_stream.Close();
+        pulseStream.Close();
+        // gyroStream.Close();
     }
 
     // Start is called before the first frame update
@@ -50,9 +62,14 @@ public class TestConnction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (incomingMsg != "")
+        if (incomingPulseMsg != "")
         {
-            Debug.Log(incomingMsg);
+            Debug.Log($"Pulse signal: {incomingPulseMsg}");
+        }
+
+        if (incomingGyroMsg != "")
+        {
+            Debug.Log($"Gyro signal: {incomingGyroMsg}");
         }
         /*
         if (!data_stream.IsOpen){
