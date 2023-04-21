@@ -7,10 +7,13 @@ public class HeartBeatEmulator : MonoBehaviour
 
     public float BPM;
     public bool heartIsBeating;
-
+    private float BPMTarget;
 
     private void Start()
     {
+
+        BPM = Random.Range(45, 120);
+
         heartIsBeating = true;
         StartCoroutine(RandomizationOfTheHeartbeat());
 
@@ -19,9 +22,16 @@ public class HeartBeatEmulator : MonoBehaviour
 
     IEnumerator RandomizationOfTheHeartbeat()
     {
-        while(heartIsBeating == true)
+
+        
+
+        while (heartIsBeating == true)
         {
-            BPM = Random.Range(45, 120);
+
+            BPMTarget = Random.Range(45, 120);
+
+            BPM = Mathf.MoveTowards(BPM, BPMTarget, 200 * Time.deltaTime);
+
             yield return new WaitForSeconds(5);
         }
     }

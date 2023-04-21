@@ -3382,7 +3382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 123896, guid: c63ea781a273235439e583799176c846, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 445910, guid: c63ea781a273235439e583799176c846, type: 3}
       propertyPath: m_RootOrder
@@ -4289,7 +4289,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 5435536143924644113, guid: 64565d381f166a949aaa2c3388dbcd0b, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.459
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5691,7 +5691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 162742, guid: d15b44addf30da74f946086ec0aa993c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 162742, guid: d15b44addf30da74f946086ec0aa993c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6495,7 +6495,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5257285007015958935, guid: 64565d381f166a949aaa2c3388dbcd0b, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 6d3923d98547ee246b00b9d7b7e674bf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 601e39ae7794bbe448eee59cfd98c1bc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -6505,7 +6505,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.6
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -7764,7 +7764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da61b5f8b304a94d8a701be6f8e461e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderRadius: 1000
+  wanderRadius: 250
   wanderTimer: 5
 --- !u!1 &2022829166
 GameObject:
