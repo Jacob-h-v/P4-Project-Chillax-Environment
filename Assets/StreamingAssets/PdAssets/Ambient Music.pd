@@ -1,4 +1,4 @@
-#N canvas 0 4 1538 762 10;
+#N canvas -8 -8 1554 786 10;
 #X obj 1538 -365 cnv 15 977 664 empty empty Output\ Adjustments 20
 12 0 14 #ffc2a6 #404040 0;
 #X obj 952 68 cnv 15 556 475 empty empty Ambient\ Pad\ Melody 20 12
@@ -296,6 +296,10 @@
 #X obj 882 -404 receive BPM;
 #X floatatom 882 -383 5 0 0 0 - - -, f 5;
 #X msg 882 -363 \$1;
+#X obj 2418 -132 receive BPM;
+#X floatatom 2418 -102 5 0 0 0 - - -, f 5;
+#X obj 2418 -74 / 200;
+#X floatatom 2418 -49 5 0 0 0 - - -, f 5;
 #X connect 7 0 8 0;
 #X connect 9 0 10 0;
 #X connect 10 0 104 0;
@@ -426,3 +430,7 @@
 #X connect 137 0 138 0;
 #X connect 138 0 139 0;
 #X connect 139 0 12 0;
+#X connect 140 0 141 0;
+#X connect 141 0 142 0;
+#X connect 142 0 143 0;
+#X connect 143 0 128 0;
