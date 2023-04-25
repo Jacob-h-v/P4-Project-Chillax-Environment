@@ -1,4 +1,4 @@
-#N canvas -8 -8 1554 786 10;
+#N canvas 0 0 1538 770 10;
 #X obj 1538 -365 cnv 15 977 664 empty empty Output\ Adjustments 20
 12 0 14 #ffc2a6 #404040 0;
 #X obj 952 68 cnv 15 556 475 empty empty Ambient\ Pad\ Melody 20 12
@@ -204,12 +204,12 @@
 #X obj 1681 -12 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 6750 1;
 #X floatatom 1681 53 5 0 0 0 - - -, f 5;
-#X obj 1957 -90 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 #fcfcfc
+#X obj 1690 -90 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 6450 1;
-#X text 2001 -112 lowpass;
+#X text 1734 -112 lowpass;
 #X text 1723 -36 lowpass;
-#X obj 2158 -189 KarplusStrongPluckedString;
-#X floatatom 1957 -67 5 0 0 0 - - -, f 5;
+#X obj 2156 -189 KarplusStrongPluckedString;
+#X floatatom 1690 -67 5 0 0 0 - - -, f 5;
 #N canvas 64 208 434 319 Chords_Scales 0;
 #X obj 180 18 inlet;
 #X obj 180 43 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
@@ -275,7 +275,7 @@
 #X connect 28 0 29 0;
 #X connect 29 0 31 0;
 #X connect 31 0 32 0;
-#X restore 2157 -221 pd Chords_Scales;
+#X restore 2156 -221 pd Chords_Scales;
 #X obj 2156 -279 r whole_note;
 #X obj 2156 -248 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
@@ -286,12 +286,12 @@
 #X floatatom 2349 113 5 0 0 0 - - -, f 5;
 #X obj 2154 30 *~ 0.05;
 #X obj 2155 -30 NewShroederReverb;
-#X obj 2261 -100 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10
-#fcfcfc #000000 #000000 6950 1;
-#X text 2305 -122 lowpass;
-#X floatatom 2261 -77 5 0 0 0 - - -, f 5;
+#X obj 2005 -91 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 6950 1;
+#X text 2049 -113 lowpass;
+#X floatatom 2005 -68 5 0 0 0 - - -, f 5;
 #X obj 2251 28 *~ 0.05;
-#X obj 2155 -107 *~ 0.5;
+#X obj 2156 -107 *~ 0.5;
 #X msg 843 -364 60;
 #X obj 882 -404 receive BPM;
 #X floatatom 882 -383 5 0 0 0 - - -, f 5;
@@ -300,6 +300,24 @@
 #X floatatom 2418 -102 5 0 0 0 - - -, f 5;
 #X obj 2418 -74 / 200;
 #X floatatom 2418 -49 5 0 0 0 - - -, f 5;
+#X text 2419 -159 BPM = Volume;
+#X text 903 -425 Hearrate;
+#X obj 2380 -335 vsl 50 128 0 1 0 1 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 6800 1;
+#X floatatom 2380 -194 5 0 0 0 - - -, f 5;
+#X obj 1994 -334 vsl 50 128 0 1 0 1 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 9600 1;
+#X floatatom 1994 -193 5 0 0 0 - - -, f 5;
+#X obj 2048 -334 vsl 50 128 0 1 0 1 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 8300 1;
+#X floatatom 2048 -193 5 0 0 0 - - -, f 5;
+#X obj 2436 -335 vsl 50 128 0 1 0 1 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 9400 1;
+#X floatatom 2436 -194 5 0 0 0 - - -, f 5;
+#X text 1988 -354 Combfilter;
+#X text 2051 -354 Allpass;
+#X text 2376 -354 Combfilter;
+#X text 2443 -354 Allpass;
 #X connect 7 0 8 0;
 #X connect 9 0 10 0;
 #X connect 10 0 104 0;
@@ -434,3 +452,11 @@
 #X connect 141 0 142 0;
 #X connect 142 0 143 0;
 #X connect 143 0 128 0;
+#X connect 146 0 147 0;
+#X connect 147 0 130 2;
+#X connect 148 0 149 0;
+#X connect 149 0 111 2;
+#X connect 150 0 151 0;
+#X connect 151 0 111 3;
+#X connect 152 0 153 0;
+#X connect 153 0 130 3;
