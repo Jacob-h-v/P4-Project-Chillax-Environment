@@ -3036,6 +3036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d21542096e502c41bc58f042fdce047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BPM: 0
 --- !u!1 &1051638223
 GameObject:
   m_ObjectHideFlags: 0
@@ -4387,7 +4388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pdPatch: {fileID: 1298072571}
-  playerBPM: {fileID: 2094475869}
+  playerBPM: {fileID: 963194225}
 --- !u!1 &1310201850
 GameObject:
   m_ObjectHideFlags: 0
@@ -8252,7 +8253,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094475869}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d9cd680fa1b5b943ae65771e905e111, type: 3}
   m_Name: 

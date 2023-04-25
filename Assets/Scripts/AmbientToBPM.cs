@@ -10,24 +10,35 @@ public class AmbientToBPM : MonoBehaviour
 
     // Gameobject that has the BPM script on it to access the float
     public GameObject playerBPM;
-    float InternalBPM;
+    float InternalBPM = 80;
+    float SensorBPM;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(MoveTowardsBPM());
     }
 
     // Update is called once per frame
     void Update()
     {
         // The BPM float from the user object is acessed each update cycle and syncronized with the internal BPM float
-        InternalBPM = playerBPM.GetComponent<HeartBeatEmulator>().BPM;
+        SensorBPM = playerBPM.GetComponent<TestConnction>().BPM;
 
         // Testing that the BPM is accurately sent
-        // Debug.Log(InternalBPM);
+        Debug.Log(InternalBPM);
 
         // By using the lipPD library we send the BPM float to the pd patch that sends the float as a message to change the generated musics BPM
         pdPatch.SendFloat("BPM", InternalBPM);
+    }
+
+    IEnumerator MoveTowardsBPM()
+    {
+        while (true)
+        {
+            InternalBPM = Mathf.MoveTowards(InternalBPM, SensorBPM, 200 * Time.deltaTime);
+
+            yield return new WaitForSeconds(2);
+        }
     }
 }

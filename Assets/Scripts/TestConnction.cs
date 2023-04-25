@@ -13,6 +13,8 @@ public class TestConnction : MonoBehaviour
     private static string outgoingPulseMsg = "";
     private static string incomingGyroMsg = "";
     private static string outgoingGyroMsg = "";
+
+    public float BPM;
     /*public string receivestring;
     public GameObject test_data;
     public Rigidbody rb;
@@ -22,7 +24,7 @@ public class TestConnction : MonoBehaviour
 
     private static void DataThread()
     {
-        pulseStream = new SerialPort("COM4", 115200);
+        pulseStream = new SerialPort("COM7", 9600);
         // gyroStream = new SerialPort("COM5", 115200);
         pulseStream.Open();
         // gyroStream.Open();
@@ -65,6 +67,7 @@ public class TestConnction : MonoBehaviour
         if (incomingPulseMsg != "")
         {
             Debug.Log($"Pulse signal: {incomingPulseMsg}");
+            BPM = float.Parse(incomingPulseMsg);
         }
 
         if (incomingGyroMsg != "")
