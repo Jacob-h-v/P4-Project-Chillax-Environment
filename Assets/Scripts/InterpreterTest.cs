@@ -11,7 +11,7 @@ public class InterpreterTest : MonoBehaviour
 
     void Start()
     {
-        serialPort = new SerialPort("COM5", 115200);
+        serialPort = new SerialPort("COM3", 115200);
         serialPort.Open();
     }
 
@@ -27,7 +27,7 @@ public class InterpreterTest : MonoBehaviour
             return;
         }
 
-        string line = serialPort.ReadLine();
+        string line = serialPort.ReadExisting();
         /*if (!line.StartsWith("ypr"))
         {
             return;
@@ -48,6 +48,8 @@ public class InterpreterTest : MonoBehaviour
             }
         }
 
+        Debug.Log($"X coordinate is: { yprArray[0]} Y coordinate is: {yprArray[1]} Z coordinate is: {yprArray[2]} ");
+        
         capsulius.localRotation = Quaternion.Euler(yprArray[0],yprArray[1],yprArray[2]);
     }
 
