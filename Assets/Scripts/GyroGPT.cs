@@ -39,7 +39,7 @@ public class GyroGPT : MonoBehaviour
                     
                     // Do something with the coordinates
                     Debug.Log("Received coordinates: (" + x1 + ", " + y1 + ", " + z1 + ")");
-                    capsulius.localRotation = Quaternion.Euler(x1,y1,z1);
+                    capsulius.localRotation = Quaternion.Euler(y1,x1,z1);
                 }
             //}
         }
