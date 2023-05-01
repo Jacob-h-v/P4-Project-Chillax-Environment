@@ -1,0 +1,1 @@
+BPM = 72, Timestamp = 74.16874/n

@@ -48,7 +48,11 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 57
+=======
+  controlID: 107
+>>>>>>> Stashed changes
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -66,10 +70,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1169.6
     y: 0
+<<<<<<< Updated upstream
     width: 366.40002
     height: 770.8
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+    width: 363.19995
+    height: 730.8
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+>>>>>>> Stashed changes
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -92,10 +103,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< Updated upstream
     width: 288
     height: 481.6
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+    width: 289.6
+    height: 456.8
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+>>>>>>> Stashed changes
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -223,7 +241,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
+<<<<<<< Updated upstream
   controlID: 63
+=======
+  controlID: 93
+>>>>>>> Stashed changes
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +270,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 47
+=======
+  controlID: 94
+>>>>>>> Stashed changes
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -331,9 +357,15 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 60}
+<<<<<<< Updated upstream
     m_SelectedIDs: 565c0000
     m_LastClickedID: 23638
     m_ExpandedIDs: 000000001e5c000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: 625c0000
+    m_LastClickedID: 23650
+    m_ExpandedIDs: 00000000185c0000425c000000ca9a3bffffff7f
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -776,9 +808,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< Updated upstream
     m_Target: {x: -0.0002092123, y: 1.3, z: 0.00015741587}
     speed: 2
     m_Value: {x: -0.0002092123, y: 1.3, z: 0.00015741587}
+=======
+    m_Target: {x: -3.5589485, y: -16.026539, z: -7.606674}
+    speed: 2
+    m_Value: {x: -3.5589485, y: -16.026539, z: -7.606674}
+>>>>>>> Stashed changes
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -825,6 +863,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< Updated upstream
     m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
     speed: 2
     m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
@@ -832,6 +871,15 @@ MonoBehaviour:
     m_Target: 1.2269523
     speed: 2
     m_Value: 1.2269523
+=======
+    m_Target: {x: -0.11285082, y: 0.8869511, z: -0.3265888, w: -0.30648047}
+    speed: 2
+    m_Value: {x: -0.113309965, y: 0.88645667, z: -0.3279176, w: -0.30630967}
+  m_Size:
+    m_Target: 30.160967
+    speed: 2
+    m_Value: 28.86217
+>>>>>>> Stashed changes
   m_Ortho:
     m_Target: 0
     speed: 2
