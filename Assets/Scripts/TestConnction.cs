@@ -59,11 +59,7 @@ public class TestConnction : MonoBehaviour
 
     private static void DataThread()
     {
-<<<<<<< Updated upstream
-        pulseStream = new SerialPort("COM6", 115200);
-=======
         pulseStream = new SerialPort("COM8", 9600);
->>>>>>> Stashed changes
         // gyroStream = new SerialPort("COM5", 115200);
         pulseStream.Open();
         // gyroStream.Open();
@@ -123,8 +119,6 @@ public class TestConnction : MonoBehaviour
         {
             Debug.Log($"Gyro signal: {incomingGyroMsg}");
         }
-<<<<<<< Updated upstream
-=======
 
         if (Input.GetKeyDown("1"))
         {
@@ -165,6 +159,5 @@ public class TestConnction : MonoBehaviour
 
         Debug.Log(receivestring);
         */
->>>>>>> Stashed changes
     }
 }
