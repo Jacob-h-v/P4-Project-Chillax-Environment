@@ -12,6 +12,7 @@ public class AmbientToBPM : MonoBehaviour
     public GameObject playerBPM;
     float InternalBPM = 80;
     float SensorBPM;
+    private float debugDelay = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class AmbientToBPM : MonoBehaviour
         SensorBPM = playerBPM.GetComponent<TestConnction>().BPM;
 
         // Testing that the BPM is accurately sent
-        Debug.Log(InternalBPM);
+        //Debug.Log(InternalBPM);
 
         // By using the lipPD library we send the BPM float to the pd patch that sends the float as a message to change the generated musics BPM
         pdPatch.SendFloat("BPM", InternalBPM);
@@ -37,7 +38,7 @@ public class AmbientToBPM : MonoBehaviour
         while (true)
         {
             InternalBPM = Mathf.MoveTowards(InternalBPM, SensorBPM, 200 * Time.deltaTime);
-
+            Debug.Log(InternalBPM);
             yield return new WaitForSeconds(2);
         }
     }

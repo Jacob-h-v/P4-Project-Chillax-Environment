@@ -13,6 +13,7 @@ public class TestConnction : MonoBehaviour
     private static string outgoingPulseMsg = "";
     private static string incomingGyroMsg = "";
     private static string outgoingGyroMsg = "";
+    private static string pulseMessage = "";
 
     public float BPM;
     /*public string receivestring;
@@ -24,7 +25,7 @@ public class TestConnction : MonoBehaviour
 
     private static void DataThread()
     {
-        pulseStream = new SerialPort("COM7", 9600);
+        pulseStream = new SerialPort("COM6", 115200);
         // gyroStream = new SerialPort("COM5", 115200);
         pulseStream.Open();
         // gyroStream.Open();
@@ -37,6 +38,7 @@ public class TestConnction : MonoBehaviour
                 outgoingPulseMsg = "";
             }
             incomingPulseMsg = pulseStream.ReadExisting();
+            //Debug.Log($"incoming pulse {incomingPulseMsg}");
             if (outgoingGyroMsg != "")
             {
                 gyroStream.Write(outgoingGyroMsg);
@@ -66,29 +68,14 @@ public class TestConnction : MonoBehaviour
     {
         if (incomingPulseMsg != "")
         {
-            Debug.Log($"Pulse signal: {incomingPulseMsg}");
-            BPM = float.Parse(incomingPulseMsg);
+            //Debug.Log($"Pulse signal: {incomingPulseMsg}");
+            pulseMessage = incomingPulseMsg.Substring("<START>".Length, incomingPulseMsg.Length - "<START>".Length - "<END>".Length);
+            BPM = float.Parse(pulseMessage);
         }
 
         if (incomingGyroMsg != "")
         {
             Debug.Log($"Gyro signal: {incomingGyroMsg}");
         }
-        /*
-        if (!data_stream.IsOpen){
-        data_stream = new SerialPort("COM3", 19200);
-        data_stream.ReadTimeout = 1000;
-        data_stream.WriteTimeout = 1000;
-        data_stream.Open();
-        }
-        receivestring = data_stream.ReadLine();
-
-        string[] datas = receivestring.Split(','); // split the data between ','
-        rb.AddForce(0,0,float.Parse(datas[0]) * sensitivity * Time.deltaTime, ForceMode.VelocityChange);
-        rb.AddForce(float.Parse(datas[1]) * sensitivity * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-        transform.Rotate(0, float.Parse(datas[2]), 0);
-
-        Debug.Log(receivestring);
-        */
     }
 }
