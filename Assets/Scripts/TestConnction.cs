@@ -71,7 +71,7 @@ public class TestConnction : MonoBehaviour
                 pulseStream.Write(outgoingPulseMsg);
                 outgoingPulseMsg = "";
             }
-            incomingPulseMsg = pulseStream.ReadExisting();
+            incomingPulseMsg = pulseStream.ReadLine();
             //Debug.Log($"incoming pulse {incomingPulseMsg}");
             if (outgoingGyroMsg != "")
             {
