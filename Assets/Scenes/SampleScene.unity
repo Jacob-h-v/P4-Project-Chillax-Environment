@@ -8103,6 +8103,7 @@ GameObject:
   - component: {fileID: 2094475878}
   - component: {fileID: 2094475879}
   - component: {fileID: 2094475880}
+  - component: {fileID: 2094475881}
   m_Layer: 0
   m_Name: Capsulius
   m_TagString: Untagged
@@ -8276,6 +8277,22 @@ MonoBehaviour:
   portName: COM5
   baudRate: 115200
   capsulius: {fileID: 2094475873}
+--- !u!54 &2094475881
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094475869}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2140408659
 GameObject:
   m_ObjectHideFlags: 0

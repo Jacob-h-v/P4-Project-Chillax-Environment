@@ -11,6 +11,18 @@ public class GyroReceiver : MonoBehaviour
     private float x1;
     private float y1;
     private float z1;
+    private float xOld = 0f;
+    private float yOld = 0f;
+    private float zOld = 0f;
+    private float x0 = 0f;
+    private float y0 = 0f;
+    private float z0 = 0f;
+    private Vector3 newVector;
+    private Vector3 oldVector;
+    private Vector3 defaultVector = new Vector3(0f, 0f, 0f);
+    private Quaternion previousRotationData;
+    private Quaternion defaultRotation = Quaternion.Euler(0f, 0f, 0f);
+    private Quaternion newRotationData;
 
     private SerialPort serialPort;
     [SerializeField] private Transform capsulius;
@@ -19,6 +31,8 @@ public class GyroReceiver : MonoBehaviour
     {
         serialPort = new SerialPort(portName, baudRate);
         serialPort.Open();
+        //previousRotationData = defaultRotation;
+        capsulius.localRotation = Quaternion.identity;
 
         StartCoroutine(DelayDebugLog());
     }
@@ -43,13 +57,19 @@ public class GyroReceiver : MonoBehaviour
                 string[] parts = message.Split(',');
                 if (parts.Length == 3)
                 {
-                    x1 = float.Parse(parts[0]);
-                    y1 = float.Parse(parts[1]);
+                    x1 = float.Parse(parts[1]);
+                    y1 = float.Parse(parts[0]);
                     z1 = float.Parse(parts[2]);
+
+                    newRotationData = Quaternion.Euler(0f, y1, 0f);
+                    Quaternion delta = newRotationData * Quaternion.Inverse(previousRotationData);
+
                     
                     // Do something with the coordinates
                     //Debug.Log("Received coordinates: (" + x1 + ", " + y1 + ", " + z1 + ")");
-                    capsulius.localRotation = Quaternion.Euler(y1,x1,z1);
+                    //capsulius.localRotation = Quaternion.Euler((Mathf.Abs(x1 - xOld) + x1),(Mathf.Abs(y1 - yOld) y1),(Mathf.Abs(z1 - zOld) + z1));
+                    capsulius.localRotation *= delta;
+                    previousRotationData = newRotationData;
                 }
             //}
         }
