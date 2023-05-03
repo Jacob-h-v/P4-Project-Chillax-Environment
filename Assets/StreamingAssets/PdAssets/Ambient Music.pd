@@ -1,4 +1,4 @@
-#N canvas -8 -8 1554 778 10;
+#N canvas 0 0 1538 770 10;
 #X obj 1538 -365 cnv 15 977 664 empty empty Output\ Adjustments 20
 12 0 14 #ffc2a6 #404040 0;
 #X obj 952 68 cnv 15 556 475 empty empty Ambient\ Pad\ Melody 20 12
@@ -189,29 +189,28 @@
 #X connect 31 0 32 0;
 #X restore 979 209 pd Chords_Scales;
 #X obj 793 -220 /;
-#X obj 1560 -2 receive~ Bass;
-#X obj 1841 -138 receive~ Ambient_Pad;
+#X obj 1560 24 receive~ Bass;
+#X obj 1841 -11 receive~ Ambient_Pad;
 #X obj 1843 164 *~ 0.5;
 #X obj 1909 164 *~ 0.5;
 #X obj 803 -423 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 1 1;
 #X obj 1848 247 dac~;
-#X obj 1841 -36 NewShroederReverb;
-#X obj 1566 43 *~ 0.3;
-#X obj 1710 105 lop~;
-#X obj 1681 21 mtof;
-#X obj 1681 -12 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 #fcfcfc
+#X obj 1841 91 NewShroederReverb;
+#X obj 1566 69 *~ 0.3;
+#X obj 1710 131 lop~;
+#X obj 1681 47 mtof;
+#X obj 1681 14 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 6750 1;
-#X floatatom 1681 53 5 0 0 0 - - -, f 5;
-#X obj 1690 -90 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 #fcfcfc
+#X floatatom 1681 79 5 0 0 0 - - -, f 5;
+#X obj 1690 -64 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 6450 1;
-#X text 1734 -112 lowpass;
-#X text 1723 -36 lowpass;
-#X obj 2156 -189 KarplusStrongPluckedString;
-#X floatatom 1690 -67 5 0 0 0 - - -, f 5;
-#X obj 2154 -252 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X text 1734 -86 lowpass;
+#X text 1723 -10 lowpass;
+#X floatatom 1690 -41 5 0 0 0 - - -, f 5;
+#X obj 2024 -325 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 1841 -88 *~ 0.1;
+#X obj 1841 39 *~ 0.1;
 #X obj 2349 -29 vsl 50 128 0 1 0 1 empty empty empty 0 -9 0 10 #fcfcfc
 #000000 #000000 5900 1;
 #X text 2413 33 Volume;
@@ -235,17 +234,17 @@
 #X obj 2380 -335 vsl 50 128 0 1 0 1 empty empty empty 0 -9 0 10 #fcfcfc
 #000000 #000000 6500 1;
 #X floatatom 2380 -194 5 0 0 0 - - -, f 5;
-#X obj 1885 -330 vsl 50 128 0 1 0 1 empty empty empty 0 -9 0 10 #fcfcfc
+#X obj 1885 -203 vsl 50 128 0 1 0 1 empty empty empty 0 -9 0 10 #fcfcfc
 #000000 #000000 9600 1;
-#X floatatom 1885 -189 5 0 0 0 - - -, f 5;
-#X obj 1939 -330 vsl 50 128 0 1 0 1 empty empty empty 0 -9 0 10 #fcfcfc
+#X floatatom 1885 -62 5 0 0 0 - - -, f 5;
+#X obj 1939 -203 vsl 50 128 0 1 0 1 empty empty empty 0 -9 0 10 #fcfcfc
 #000000 #000000 8300 1;
-#X floatatom 1939 -189 5 0 0 0 - - -, f 5;
+#X floatatom 1939 -62 5 0 0 0 - - -, f 5;
 #X obj 2436 -335 vsl 50 128 0 1 0 1 empty empty empty 0 -9 0 10 #fcfcfc
 #000000 #000000 9800 1;
 #X floatatom 2436 -194 5 0 0 0 - - -, f 5;
-#X text 1879 -350 Combfilter;
-#X text 1942 -350 Allpass;
+#X text 1879 -223 Combfilter;
+#X text 1942 -223 Allpass;
 #X text 2376 -354 Combfilter;
 #X text 2443 -354 Allpass;
 #N canvas 0 0 1538 762 Melody_Sequence_thresh1 0;
@@ -519,9 +518,9 @@
 #X connect 132 0 133 0;
 #X connect 133 0 131 0;
 #X connect 134 0 18 0;
-#X restore 1539 -303 pd Melody_Sequence_thresh1;
-#X obj 2154 -283 receive 4th_note;
-#N canvas 915 0 614 786 Melody_Sequence_thresh2 0;
+#X restore 1675 -298 pd Melody_Sequence_thresh1;
+#X obj 2024 -356 receive 4th_note;
+#N canvas -8 -8 1538 803 Melody_Sequence_thresh2 0;
 #X obj 1061 42 cnv 15 503 125 empty empty Sequence\ 3 20 12 0 14 #ff8000
 #404040 0;
 #X obj 591 43 cnv 15 468 124 empty empty Sequence\ 2 20 12 0 14 #80ff80
@@ -778,8 +777,8 @@
 #X connect 124 0 10 0;
 #X connect 127 0 10 0;
 #X connect 128 0 15 0;
-#X restore 1538 -270 pd Melody_Sequence_thresh2;
-#N canvas -8 -8 1538 795 Melody_Sequence_thresh3 0;
+#X restore 1849 -298 pd Melody_Sequence_thresh2;
+#N canvas 0 0 1538 795 Melody_Sequence_thresh3 0;
 #X obj 903 44 cnv 15 248 119 empty empty Sequence\ 3 20 12 0 14 #ff8000
 #404040 0;
 #X obj 591 43 cnv 15 310 119 empty empty Sequence\ 2 20 12 0 14 #80ff80
@@ -918,7 +917,7 @@
 #X connect 66 0 40 0;
 #X connect 67 0 44 0;
 #X connect 68 0 60 0;
-#X restore 1539 -240 pd Melody_Sequence_thresh3;
+#X restore 2021 -298 pd Melody_Sequence_thresh3;
 #N canvas 0 0 1538 762 Melody_Sequence_thresh4 0;
 #X obj 1061 42 cnv 15 437 126 empty empty Sequence\ 3 20 12 0 14 #ff8000
 #404040 0;
@@ -1070,13 +1069,37 @@
 #X connect 71 0 9 0;
 #X connect 72 0 9 0;
 #X connect 74 0 68 0;
-#X restore 1538 -208 pd Melody_Sequence_thresh4;
+#X restore 2192 -298 pd Melody_Sequence_thresh4;
 #X text 903 -425 Heartrate;
 #X msg 843 -364 60;
+#X obj 1544 -327 receive SongVolume1;
+#X floatatom 1544 -303 5 0 0 0 - - -, f 5;
+#X obj 1675 -272 KarplusStrongPluckedString;
+#X obj 1849 -272 KarplusStrongPluckedString;
+#X obj 2021 -272 KarplusStrongPluckedString;
+#X obj 2192 -273 KarplusStrongPluckedString;
+#X obj 1675 -250 *~ 1;
+#X obj 1849 -251 *~ 1;
+#X obj 2021 -251 *~ 1;
+#X obj 2192 -252 *~ 1;
+#X floatatom 1542 -257 5 0 0 0 - - -, f 5;
+#X floatatom 1542 -210 5 0 0 0 - - -, f 5;
+#X floatatom 1542 -165 5 0 0 0 - - -, f 5;
+#X obj 1542 -281 receive SongVolume2;
+#X obj 1542 -234 receive SongVolume3;
+#X obj 1542 -189 receive SongVolume4;
+#X obj 1405 -381 vsl 15 128 0 1 0 1 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 1429 -380 vsl 15 128 0 1 0 1 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 1454 -380 vsl 15 128 0 1 0 1 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 1479 -379 vsl 15 128 0 1 0 1 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
 #X connect 7 0 8 0;
 #X connect 9 0 10 0;
 #X connect 10 0 104 0;
-#X connect 11 0 160 0;
+#X connect 11 0 159 0;
 #X connect 12 0 13 0;
 #X connect 12 0 104 1;
 #X connect 13 0 104 0;
@@ -1168,10 +1191,10 @@
 #X connect 103 0 83 0;
 #X connect 104 0 14 0;
 #X connect 105 0 112 0;
-#X connect 106 0 123 0;
+#X connect 106 0 122 0;
 #X connect 107 0 110 0;
 #X connect 108 0 110 1;
-#X connect 109 0 160 0;
+#X connect 109 0 159 0;
 #X connect 111 0 107 0;
 #X connect 111 1 108 0;
 #X connect 112 0 113 0;
@@ -1180,38 +1203,63 @@
 #X connect 114 0 116 0;
 #X connect 115 0 114 0;
 #X connect 116 0 113 1;
-#X connect 117 0 121 0;
-#X connect 120 0 133 0;
-#X connect 121 0 111 0;
-#X connect 122 0 154 0;
-#X connect 123 0 111 1;
-#X connect 124 0 126 0;
-#X connect 126 0 108 1;
-#X connect 126 0 107 1;
-#X connect 127 0 108 0;
-#X connect 127 0 107 0;
-#X connect 128 0 127 0;
-#X connect 128 1 132 0;
-#X connect 129 0 131 0;
-#X connect 131 0 128 0;
-#X connect 132 0 108 0;
-#X connect 132 0 107 0;
-#X connect 133 0 128 1;
+#X connect 117 0 120 0;
+#X connect 120 0 111 0;
+#X connect 121 0 153 0;
+#X connect 121 0 155 0;
+#X connect 121 0 156 0;
+#X connect 121 0 157 0;
+#X connect 122 0 111 1;
+#X connect 123 0 125 0;
+#X connect 125 0 108 1;
+#X connect 125 0 107 1;
+#X connect 126 0 108 0;
+#X connect 126 0 107 0;
+#X connect 127 0 126 0;
+#X connect 127 1 131 0;
+#X connect 128 0 130 0;
+#X connect 130 0 127 0;
+#X connect 131 0 108 0;
+#X connect 131 0 107 0;
+#X connect 132 0 127 1;
+#X connect 133 0 134 0;
 #X connect 134 0 135 0;
-#X connect 135 0 136 0;
-#X connect 136 0 12 0;
+#X connect 135 0 12 0;
+#X connect 136 0 137 0;
 #X connect 137 0 138 0;
 #X connect 138 0 139 0;
-#X connect 139 0 140 0;
-#X connect 140 0 126 0;
-#X connect 142 0 143 0;
-#X connect 143 0 128 2;
-#X connect 144 0 145 0;
-#X connect 145 0 111 2;
-#X connect 146 0 147 0;
-#X connect 147 0 111 3;
-#X connect 148 0 149 0;
-#X connect 149 0 128 3;
-#X connect 154 0 120 0;
-#X connect 155 0 122 0;
-#X connect 160 0 12 0;
+#X connect 139 0 125 0;
+#X connect 141 0 142 0;
+#X connect 142 0 127 2;
+#X connect 143 0 144 0;
+#X connect 144 0 111 2;
+#X connect 145 0 146 0;
+#X connect 146 0 111 3;
+#X connect 147 0 148 0;
+#X connect 148 0 127 3;
+#X connect 153 0 162 0;
+#X connect 154 0 121 0;
+#X connect 155 0 163 0;
+#X connect 156 0 164 0;
+#X connect 157 0 165 0;
+#X connect 159 0 12 0;
+#X connect 160 0 161 0;
+#X connect 161 0 166 1;
+#X connect 162 0 166 0;
+#X connect 163 0 167 0;
+#X connect 164 0 168 0;
+#X connect 165 0 169 0;
+#X connect 166 0 132 0;
+#X connect 167 0 132 0;
+#X connect 168 0 132 0;
+#X connect 169 0 132 0;
+#X connect 170 0 167 1;
+#X connect 171 0 168 1;
+#X connect 172 0 169 1;
+#X connect 173 0 170 0;
+#X connect 174 0 171 0;
+#X connect 175 0 172 0;
+#X connect 176 0 161 0;
+#X connect 177 0 170 0;
+#X connect 178 0 171 0;
+#X connect 179 0 172 0;
