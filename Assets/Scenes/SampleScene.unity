@@ -3037,7 +3037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BPM: 0
-  Filename: log4
+  Filename: StroopTestKanne
 --- !u!1 &1051638223
 GameObject:
   m_ObjectHideFlags: 0

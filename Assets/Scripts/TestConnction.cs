@@ -59,7 +59,7 @@ public class TestConnction : MonoBehaviour
 
     private static void DataThread()
     {
-        pulseStream = new SerialPort("COM8", 9600);
+        pulseStream = new SerialPort("COM9", 9600);
         // gyroStream = new SerialPort("COM5", 115200);
         pulseStream.Open();
         // gyroStream.Open();
