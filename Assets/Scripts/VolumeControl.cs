@@ -17,20 +17,15 @@ public class VolumeControl : MonoBehaviour
 
     void Awake()
     {
+        // Listen for changes on the UI elements
         slider.onValueChanged.AddListener(HandleSliderValueChanged);
         toggle.onValueChanged.AddListener(HandleToggleValueChanged);
     }
 
     void Start()
     {
+        // Load previously chosen volume values
         slider.value = PlayerPrefs.GetFloat(volumeParameter, slider.value);
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void HandleSliderValueChanged(float value)
@@ -49,6 +44,7 @@ public class VolumeControl : MonoBehaviour
         }
         if (enableMaster)
         {
+            // if Master volume was disabled and then re-enabled, set to 80% (to avoid weird bug where it remains at 0)
             slider.value = 0.8f;
         }
         else
@@ -59,6 +55,7 @@ public class VolumeControl : MonoBehaviour
 
     private void OnDisable()
     {
+        // Saves  user's volume preferences
         PlayerPrefs.SetFloat(volumeParameter, slider.value);
     }
 }

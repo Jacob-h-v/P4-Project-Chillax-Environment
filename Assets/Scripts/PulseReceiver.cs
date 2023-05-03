@@ -5,30 +5,19 @@ using System.Threading;
 using System.IO;
 using System.IO.Ports;
 
-public class TestConnction : MonoBehaviour
+public class PulseReceiver : MonoBehaviour
 { 
-    Thread IOThread = new Thread(DataThread);
+    private Thread IOThread = new Thread(DataThread);
+    private StreamWriter sw;
     private static SerialPort pulseStream;
-    private static SerialPort gyroStream;
+
     private static string incomingPulseMsg = "";
     private static string outgoingPulseMsg = "";
-    private static string incomingGyroMsg = "";
-    private static string outgoingGyroMsg = "";
     private static string pulseMessage = "";
+    [SerializeField] string Filename = "log4";
+    string path;
 
     public float BPM = 80;
-    /*public string receivestring;
-    public GameObject test_data;
-    public Rigidbody rb;
-    public float sensitivity = 0.01f;
-    public string[] datas;
-    */
-
-    private StreamWriter sw;
-
-    [SerializeField] string Filename = "log4";
-
-    string path;
 
     private void CreateLogText()
     {
@@ -60,9 +49,7 @@ public class TestConnction : MonoBehaviour
     private static void DataThread()
     {
         pulseStream = new SerialPort("COM9", 9600);
-        // gyroStream = new SerialPort("COM5", 115200);
         pulseStream.Open();
-        // gyroStream.Open();
 
         while(true)
         {
@@ -73,12 +60,6 @@ public class TestConnction : MonoBehaviour
             }
             incomingPulseMsg = pulseStream.ReadLine();
             //Debug.Log($"incoming pulse {incomingPulseMsg}");
-            if (outgoingGyroMsg != "")
-            {
-                gyroStream.Write(outgoingGyroMsg);
-                outgoingGyroMsg = "";
-            }
-            // incomingGyroMsg = gyroStream.ReadExisting();
             Thread.Sleep(200);
         }
     }
@@ -88,7 +69,6 @@ public class TestConnction : MonoBehaviour
         IOThread.Abort();
         pulseStream.Close();
         sw.Close();
-        // gyroStream.Close();
     }
 
     // Start is called before the first frame update
@@ -101,8 +81,6 @@ public class TestConnction : MonoBehaviour
         sw = new StreamWriter(path);
 
         StartCoroutine(LogUpdate());
-
-        //data_stream.Open(); //Initiate the Serial stream
     }
 
     // Update is called once per frame
@@ -110,16 +88,13 @@ public class TestConnction : MonoBehaviour
     {
         if (incomingPulseMsg != "")
         {
-            //Debug.Log($"Pulse signal: {incomingPulseMsg}");
+            // Separate remove the <START> and <END> statements from the received string and parse the remaining BPM value to a float
             pulseMessage = incomingPulseMsg.Substring("<START>".Length, incomingPulseMsg.Length - "<START>".Length - "<END>".Length);
             BPM = float.Parse(pulseMessage);
         }
 
-        if (incomingGyroMsg != "")
-        {
-            Debug.Log($"Gyro signal: {incomingGyroMsg}");
-        }
 
+        // Controls for writing test progression to log file
         if (Input.GetKeyDown("1"))
         {
             Debug.Log("Baseline Reading Start");
@@ -143,21 +118,5 @@ public class TestConnction : MonoBehaviour
             Debug.Log("Product Test End");
             sw.WriteLine("Product Test End");
         }
-        /*
-        if (!data_stream.IsOpen){
-        data_stream = new SerialPort("COM3", 19200);
-        data_stream.ReadTimeout = 1000;
-        data_stream.WriteTimeout = 1000;
-        data_stream.Open();
-        }
-        receivestring = data_stream.ReadLine();
-
-        string[] datas = receivestring.Split(','); // split the data between ','
-        rb.AddForce(0,0,float.Parse(datas[0]) * sensitivity * Time.deltaTime, ForceMode.VelocityChange);
-        rb.AddForce(float.Parse(datas[1]) * sensitivity * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-        transform.Rotate(0, float.Parse(datas[2]), 0);
-
-        Debug.Log(receivestring);
-        */
     }
 }

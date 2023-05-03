@@ -6,10 +6,10 @@ public class WanderingAI : MonoBehaviour
 
     public float wanderRadius;
     public float wanderTimer;
+    private float timer;
 
     private Transform target;
     private UnityEngine.AI.NavMeshAgent agent;
-    private float timer;
 
     // Use this for initialization
     void OnEnable()

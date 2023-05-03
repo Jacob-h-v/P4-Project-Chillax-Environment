@@ -21,7 +21,8 @@ public class ScriptedPanning : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        // Keeps panning left -> right, right -> left if enabled
         CheckCurrentPan();
         if (enableAutoPan)
         {
@@ -39,6 +40,7 @@ public class ScriptedPanning : MonoBehaviour
         
     }
 
+    // reverts panning direction when one extreme is reached
     private void CheckCurrentPan()
     {
         if (currentPan >= 1.0f)

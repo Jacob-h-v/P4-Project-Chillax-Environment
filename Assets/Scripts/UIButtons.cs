@@ -9,11 +9,6 @@ public class UIButtons : MonoBehaviour
     [SerializeField] Button viewSceneBTN;
     [SerializeField] Button exitBTN;
     [SerializeField] GameObject canvas;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -22,11 +17,13 @@ public class UIButtons : MonoBehaviour
         exitBTN.onClick.AddListener(ExitListener);
     }
 
+    // Closes the volume control canvas when View Scene button is clicked
     private void ViewSceneListener()
     {
         canvas.SetActive(false);
     }
 
+    // Closes the application when Exit button is clicked
     private void ExitListener()
     {
         Application.Quit();
