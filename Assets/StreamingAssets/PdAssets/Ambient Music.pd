@@ -14,7 +14,7 @@
 #X obj 676 -439 cnv 15 281 331 empty empty BPM 35 21 0 14 #8080ff #000000
 0;
 #X obj 506 -208 tgl 15 1 empty empty ON/OFF 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 506 -183 send ON;
 #X obj 715 -370 loadbang;
 #X msg 716 -331 60000;
