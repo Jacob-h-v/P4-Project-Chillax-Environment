@@ -15,9 +15,12 @@ public class PulseReceiver : MonoBehaviour
     private static string outgoingPulseMsg = "";
     private static string pulseMessage = "";
     [SerializeField] string Filename = "log4";
+    public string portName = "COM9";
     string path;
 
     public float BPM = 80;
+    
+    public int baudRate = 9600;
 
     private void CreateLogText()
     {
@@ -48,8 +51,6 @@ public class PulseReceiver : MonoBehaviour
 
     private static void DataThread()
     {
-        pulseStream = new SerialPort("COM9", 9600);
-        pulseStream.Open();
 
         while(true)
         {
@@ -74,6 +75,8 @@ public class PulseReceiver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        pulseStream = new SerialPort(portName, baudRate);
+        pulseStream.Open();
         IOThread.Start();
         CreateLogText();
         

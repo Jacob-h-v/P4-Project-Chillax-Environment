@@ -2860,7 +2860,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2926,20 +2925,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 58.65, y: 0, z: 0}
---- !u!114 &963194229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d21542096e502c41bc58f042fdce047, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Filename: StroopTestKanne
-  BPM: 0
 --- !u!1 &1051638223
 GameObject:
   m_ObjectHideFlags: 0
@@ -4291,7 +4276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pdPatch: {fileID: 1298072571}
-  playerBPM: {fileID: 963194225}
+  playerBPM: {fileID: 2500585982553792812}
   Threshold1: 60
   Threshold2: 75
   Threshold3: 90
@@ -8200,3 +8185,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e4c0719433cb5740b7135c64c972cb7, type: 3}
+--- !u!1 &2500585982553792812 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2500585981819194230, guid: 0e4c0719433cb5740b7135c64c972cb7, type: 3}
+  m_PrefabInstance: {fileID: 2500585982553792811}
+  m_PrefabAsset: {fileID: 0}

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2500585981819194189}
   - component: {fileID: 2500585981819194188}
   - component: {fileID: 2500585981819194179}
+  - component: {fileID: 4411731009219940278}
   - component: {fileID: 2500585981819194178}
   m_Layer: 0
   m_Name: Capsulius
@@ -192,6 +193,20 @@ MonoBehaviour:
   portName: COM5
   baudRate: 115200
   capsulius: {fileID: 2500585981819194186}
+--- !u!114 &4411731009219940278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2500585981819194230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d21542096e502c41bc58f042fdce047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Filename: log4
+  BPM: 80
 --- !u!54 &2500585981819194178
 Rigidbody:
   m_ObjectHideFlags: 0
