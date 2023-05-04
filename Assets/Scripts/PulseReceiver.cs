@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Globalization;
 using System.Threading;
 using System.IO;
 using System.IO.Ports;
@@ -10,29 +12,19 @@ public class PulseReceiver : MonoBehaviour
     private Thread IOThread = new Thread(DataThread);
     private StreamWriter sw;
     private static SerialPort pulseStream;
+    DateTimeOffset localTime;
 
     private static string incomingPulseMsg = "";
     private static string outgoingPulseMsg = "";
     private static string pulseMessage = "";
-    [SerializeField] string Filename = "log4";
+    [SerializeField] string newFileName = "";
+    static string Filename = "";
     public string portName = "COM9";
     string path;
 
     public float BPM = 80;
     
     public int baudRate = 9600;
-
-    private void CreateLogText()
-    {
-        // Defining the path of the log file
-        path = Application.dataPath + "/TestLogs" + "/" + Filename + ".txt";
-
-        // Checks if file already exists
-        if (!File.Exists(path))
-        {
-            File.WriteAllText(path, "");
-        }
-    }
 
     IEnumerator LogUpdate()
     {
@@ -61,7 +53,7 @@ public class PulseReceiver : MonoBehaviour
             }
             incomingPulseMsg = pulseStream.ReadLine();
             //Debug.Log($"incoming pulse {incomingPulseMsg}");
-            Thread.Sleep(200);
+            Thread.Sleep(100);
         }
     }
 
@@ -72,13 +64,38 @@ public class PulseReceiver : MonoBehaviour
         sw.Close();
     }
 
+    void Awake()
+    {
+        // Get the current date and time in GMT+2
+        localTime = DateTimeOffset.Now.ToOffset(TimeSpan.FromHours(2));
+
+        if (PlayerPrefs.GetString("Filename", Filename) != "" && PlayerPrefs.GetString("Filename", Filename) != null)
+        {
+        Filename = PlayerPrefs.GetString("Filename", Filename);
+        }
+        else
+        {
+            Filename = "emergencyLog";
+        }
+
+        if (newFileName != "")
+        {
+            if (newFileName != Filename)
+            {
+                Filename = newFileName;
+            }
+        }
+
+        CreateLogText();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         pulseStream = new SerialPort(portName, baudRate);
         pulseStream.Open();
+        pulseStream.ReadExisting();
         IOThread.Start();
-        CreateLogText();
         
         // Creating a new Streamwriter object with desired path
         sw = new StreamWriter(path);
@@ -121,5 +138,19 @@ public class PulseReceiver : MonoBehaviour
             Debug.Log("Product Test End");
             sw.WriteLine("Product Test End");
         }
+    }
+
+    private void CreateLogText()
+    {
+
+        // Get current time and date
+        string filedate = localTime.ToString("yyyy-MM-dd_HH-mm-ss", CultureInfo.InvariantCulture) + ".txt";
+
+        // Define the path of the log file
+        path = Application.dataPath + "/TestLogs" + "/" + Filename + filedate;
+
+        // Write to the file
+        File.WriteAllText(path, "");
+        
     }
 }
