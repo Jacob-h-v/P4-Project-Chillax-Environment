@@ -743,7 +743,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -5257285007015958935, guid: 64565d381f166a949aaa2c3388dbcd0b, type: 2}
   m_audioClip: {fileID: 8300000, guid: 7705f4ff0cf97f5468e95c721c9265af, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.326
+  m_Volume: 0.297
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3865,7 +3865,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -5257285007015958935, guid: 64565d381f166a949aaa2c3388dbcd0b, type: 2}
   m_audioClip: {fileID: 8300000, guid: f70c08777526bae4cabe7e200e20e61a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.402
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5674,7 +5674,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -5257285007015958935, guid: 64565d381f166a949aaa2c3388dbcd0b, type: 2}
   m_audioClip: {fileID: 8300000, guid: dca9f1698618e8048895cbc6d174aa03, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.424
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8610,7 +8610,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 989061707931576231, guid: 0e4c0719433cb5740b7135c64c972cb7, type: 3}
       propertyPath: newFileName
-      value: InternalPilot
+      value: ExternalPilot
       objectReference: {fileID: 0}
     - target: {fileID: 2500585981819194179, guid: 0e4c0719433cb5740b7135c64c972cb7, type: 3}
       propertyPath: m_Enabled
