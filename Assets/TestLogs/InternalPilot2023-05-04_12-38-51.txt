@@ -1,0 +1,1 @@
+BPM = 80, Timestamp = 0

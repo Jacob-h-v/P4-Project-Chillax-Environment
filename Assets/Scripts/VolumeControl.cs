@@ -58,4 +58,12 @@ public class VolumeControl : MonoBehaviour
         // Saves  user's volume preferences
         PlayerPrefs.SetFloat(volumeParameter, slider.value);
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown("3"))
+        {
+            toggle.isOn = true;
+        }
+    }
 }
