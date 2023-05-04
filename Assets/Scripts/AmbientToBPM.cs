@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AmbientToBPM : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class AmbientToBPM : MonoBehaviour
 
     // Gameobject that has the BPM script on it to access the float
     public GameObject playerBPM;
-    float InternalBPM = 80;
+    public float InternalBPM = 80;
     float SensorBPM = 80;
 
     // Threshold values for BPM changes to music melody
@@ -23,6 +24,10 @@ public class AmbientToBPM : MonoBehaviour
     float songVolume2 = 0;
     float songVolume3 = 0;
     float songVolume4 = 0;
+
+    public AudioSource rainAbove;
+    public AudioSource rainNear;
+    bool isRaining = false;
 
     // The seconds between each fade update
     float UpdateFrequency = 0.1f;
@@ -79,11 +84,25 @@ public class AmbientToBPM : MonoBehaviour
             if (InternalBPM <= Threshold1)
             {
                 Fade(1f, 0f, 0f, 0f);
+
+                if (isRaining == false)
+                {
+                    rainAbove.Play();
+                    rainNear.Play();
+                    isRaining = true;
+                }
             }
 
             if (InternalBPM > Threshold1 && InternalBPM <= Threshold2)
             {
                 Fade(0f, 1f, 0f, 0f);
+
+                if (isRaining == true)
+                {
+                    rainAbove.Pause();
+                    rainNear.Pause();
+                    isRaining = false;
+                }
             }
 
             if (InternalBPM > Threshold2 && InternalBPM <= Threshold3)
