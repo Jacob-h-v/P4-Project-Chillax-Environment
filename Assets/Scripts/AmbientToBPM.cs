@@ -25,15 +25,24 @@ public class AmbientToBPM : MonoBehaviour
     float songVolume3 = 0;
     float songVolume4 = 0;
 
+    // Audio Sources in the Unity Space and volume values used to turn off and on based on BPM
+
+    // Rain
     public AudioSource rainAbove;
     public AudioSource rainNear;
     bool isRaining = false;
+    float rainVolume = 0f;
+
+    // Wind
+    public AudioSource strongWind;
+    bool isWindy = false;
+    float windVolume = 0f;
 
     // The seconds between each fade update
     float UpdateFrequency = 0.1f;
 
     // Controls the maximum change per second in the fade
-    [SerializeField] float FadeDelay = 1f;
+    float FadeDelay = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -68,12 +77,14 @@ public class AmbientToBPM : MonoBehaviour
     }
 
     // Function that fades between the different songs between 0 and 1
-    private void Fade(float song1, float song2, float song3, float song4)
+    private void Fade(float song1, float song2, float song3, float song4, float rain, float wind)
     {
         songVolume1 = Mathf.MoveTowards(songVolume1, song1, FadeDelay * Time.deltaTime);
         songVolume2 = Mathf.MoveTowards(songVolume2, song2, FadeDelay * Time.deltaTime);
         songVolume3 = Mathf.MoveTowards(songVolume3, song3, FadeDelay * Time.deltaTime);
         songVolume4 = Mathf.MoveTowards(songVolume4, song4, FadeDelay * Time.deltaTime);
+        rainVolume = Mathf.MoveTowards(rainVolume, rain, FadeDelay * Time.deltaTime);
+        windVolume = Mathf.MoveTowards(windVolume, wind, FadeDelay * Time.deltaTime);
     }
 
     // ThresholdFading() is for checking the current BPM and changing the song in pd based on current threshold value
@@ -83,7 +94,7 @@ public class AmbientToBPM : MonoBehaviour
         {
             if (InternalBPM <= Threshold1)
             {
-                Fade(1f, 0f, 0f, 0f);
+                Fade(1f, 0f, 0f, 0f, 1f, 0f);
 
                 if (isRaining == false)
                 {
@@ -95,7 +106,7 @@ public class AmbientToBPM : MonoBehaviour
 
             if (InternalBPM > Threshold1 && InternalBPM <= Threshold2)
             {
-                Fade(0f, 1f, 0f, 0f);
+                Fade(0f, 1f, 0f, 0f, 0f, 0f);
 
                 if (isRaining == true)
                 {
@@ -103,16 +114,28 @@ public class AmbientToBPM : MonoBehaviour
                     rainNear.Pause();
                     isRaining = false;
                 }
+
+                if (isWindy == true)
+                {
+                    strongWind.Pause();
+                    isWindy = false;
+                }
             }
 
             if (InternalBPM > Threshold2 && InternalBPM <= Threshold3)
             {
-                Fade(0f, 0f, 1f, 0f);
+                Fade(0f, 0f, 1f, 0f, 0f, 0.5f);
+
+                if (isWindy == false)
+                {
+                    strongWind.Play();
+                    isWindy = true;
+                }
             }
 
             if (InternalBPM > Threshold3)
             {
-                Fade(0f, 0f, 0f, 1f);
+                Fade(0f, 0f, 0f, 1f, 0f, 1f);
             }
 
             // Sends all volume floats for each song to pd, which either fades songs in or out
@@ -120,6 +143,9 @@ public class AmbientToBPM : MonoBehaviour
             pdPatch.SendFloat("SongVolume2", songVolume2);
             pdPatch.SendFloat("SongVolume3", songVolume3);
             pdPatch.SendFloat("SongVolume4", songVolume4);
+            rainAbove.volume = rainVolume;
+            rainNear.volume = rainVolume;
+            strongWind.volume = windVolume;
 
             yield return new WaitForSeconds(UpdateFrequency);
         }

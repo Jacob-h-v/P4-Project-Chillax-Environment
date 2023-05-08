@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4607,7 +4607,7 @@ MonoBehaviour:
   Threshold3: 85
   rainAbove: {fileID: 1553928989}
   rainNear: {fileID: 1192157060}
-  FadeDelay: 1
+  strongWind: {fileID: 289018087}
 --- !u!1 &1310201850
 GameObject:
   m_ObjectHideFlags: 0
@@ -8610,7 +8610,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 989061707931576231, guid: 0e4c0719433cb5740b7135c64c972cb7, type: 3}
       propertyPath: portName
-      value: COM5
+      value: COM10
       objectReference: {fileID: 0}
     - target: {fileID: 989061707931576231, guid: 0e4c0719433cb5740b7135c64c972cb7, type: 3}
       propertyPath: newFileName
