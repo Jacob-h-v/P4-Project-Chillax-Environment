@@ -63,7 +63,7 @@ public class AmbientToBPM : MonoBehaviour
             // Testing that the BPM is accurately sent
             Debug.Log(InternalBPM);
 
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(0.15f);
         }
     }
 

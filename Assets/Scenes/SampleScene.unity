@@ -8609,12 +8609,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 989061707931576231, guid: 0e4c0719433cb5740b7135c64c972cb7, type: 3}
+      propertyPath: portName
+      value: COM5
+      objectReference: {fileID: 0}
+    - target: {fileID: 989061707931576231, guid: 0e4c0719433cb5740b7135c64c972cb7, type: 3}
       propertyPath: newFileName
       value: ExternalPilot
       objectReference: {fileID: 0}
+    - target: {fileID: 989061707931576231, guid: 0e4c0719433cb5740b7135c64c972cb7, type: 3}
+      propertyPath: ambientToBPM
+      value: 
+      objectReference: {fileID: 1298072573}
     - target: {fileID: 2500585981819194179, guid: 0e4c0719433cb5740b7135c64c972cb7, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2500585981819194186, guid: 0e4c0719433cb5740b7135c64c972cb7, type: 3}
       propertyPath: m_RootOrder

@@ -23,6 +23,8 @@ public class PulseReceiver : MonoBehaviour
     string path;
 
     public float BPM = 80;
+    [SerializeField] AmbientToBPM ambientToBPM;
+    [SerializeField] float smoothedBPM;
     
     public int baudRate = 9600;
 
@@ -30,9 +32,11 @@ public class PulseReceiver : MonoBehaviour
     {
         while (true)
         {
+            smoothedBPM = ambientToBPM.InternalBPM;
+            smoothedBPM = (int)Mathf.Round(smoothedBPM);
             int currentTime = (int)Mathf.Round(Time.time);
             // Defining what is written on each line in the log text
-            string SensorLogText = "BPM = " + BPM + ", Timestamp = " + currentTime;
+            string SensorLogText = "Sensor BPM = " + BPM + ", Smoothed BPM = " + smoothedBPM + ", Timestamp = " + currentTime;
 
             // Appending the string to the textfile which means it is written behind the current text
             sw.WriteLine(SensorLogText);
