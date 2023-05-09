@@ -1,6 +1,0 @@
-BPM = 80, Timestamp = 0
-BPM = 44, Timestamp = 1
-BPM = 44, Timestamp = 2
-BPM = 42, Timestamp = 3
-BPM = 42, Timestamp = 4
-BPM = 42, Timestamp = 5

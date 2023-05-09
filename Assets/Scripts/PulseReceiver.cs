@@ -11,6 +11,7 @@ public class PulseReceiver : MonoBehaviour
 { 
     private Thread IOThread = new Thread(DataThread);
     private StreamWriter sw;
+    private StreamWriter sw2;
     private static SerialPort pulseStream;
     DateTimeOffset localTime;
 
@@ -21,8 +22,10 @@ public class PulseReceiver : MonoBehaviour
     static string Filename = "";
     public string portName = "COM9";
     string path;
+    string path2;
 
     public float BPM = 80;
+    [SerializeField] float rawSensorData;
     [SerializeField] AmbientToBPM ambientToBPM;
     [SerializeField] float smoothedBPM;
     
@@ -42,6 +45,20 @@ public class PulseReceiver : MonoBehaviour
             sw.WriteLine(SensorLogText);
 
             yield return new WaitForSeconds(1);
+        }
+    }
+
+    IEnumerator RawLogUpdate()
+    {
+        while (true)
+        {
+            // Defining what is written on each line in the log text
+            string RawLogText = "Raw Sensor Data = " + rawSensorData + ", Timestamp = " + Time.time;
+
+            // Appending the string to the textfile which means it is written behind the current text
+            sw2.WriteLine(RawLogText);
+
+            yield return new WaitForSeconds(0.2f);
         }
     }
 
@@ -66,6 +83,7 @@ public class PulseReceiver : MonoBehaviour
         IOThread.Abort();
         pulseStream.Close();
         sw.Close();
+        sw2.Close();
     }
 
     void Awake()
@@ -103,8 +121,10 @@ public class PulseReceiver : MonoBehaviour
         
         // Creating a new Streamwriter object with desired path
         sw = new StreamWriter(path);
+        sw2 = new StreamWriter(path2);
 
         StartCoroutine(LogUpdate());
+        StartCoroutine(RawLogUpdate());
     }
 
     // Update is called once per frame
@@ -114,7 +134,9 @@ public class PulseReceiver : MonoBehaviour
         {
             // Separate remove the <START> and <END> statements from the received string and parse the remaining BPM value to a float
             pulseMessage = incomingPulseMsg.Substring("<START>".Length, incomingPulseMsg.Length - "<START>".Length - "<END>".Length);
-            BPM = float.Parse(pulseMessage);
+            string[] parts = pulseMessage.Split(',');
+            BPM = float.Parse(parts[0]);
+            rawSensorData = float.Parse(parts[1]);
         }
 
 
@@ -123,24 +145,28 @@ public class PulseReceiver : MonoBehaviour
         {
             Debug.Log("Baseline Reading Start");
             sw.WriteLine("Baseline Reading Start");
+            sw2.WriteLine("Baseline Reading Start");
         }
 
         if (Input.GetKeyDown("2"))
         {
             Debug.Log("Stress Test Start");
             sw.WriteLine("Stress Test Start");
+            sw2.WriteLine("Stress Test Start");
         }
 
         if (Input.GetKeyDown("3"))
         {
             Debug.Log("Product Test Start");
             sw.WriteLine("Product Test Start");
+            sw2.WriteLine("Product Test Start");
         }
 
         if (Input.GetKeyDown("4"))
         {
             Debug.Log("Product Test End");
             sw.WriteLine("Product Test End");
+            sw2.WriteLine("Product Test End");
         }
     }
 
@@ -152,9 +178,11 @@ public class PulseReceiver : MonoBehaviour
 
         // Define the path of the log file
         path = Application.dataPath + "/TestLogs" + "/" + Filename + filedate;
+        path2 = Application.dataPath + "/TestLogs" + "/" + Filename + "Raw " + filedate;
 
         // Write to the file
         File.WriteAllText(path, "");
+        File.WriteAllText(path2, "");
         
     }
 }
