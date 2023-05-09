@@ -4599,6 +4599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ec54c0b6c17b04a9a91e16b5629159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useSensor: 1
   pdPatch: {fileID: 1298072571}
   playerBPM: {fileID: 2500585982553792812}
   InternalBPM: 80

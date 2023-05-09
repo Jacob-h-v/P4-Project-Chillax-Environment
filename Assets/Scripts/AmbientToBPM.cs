@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 
 public class AmbientToBPM : MonoBehaviour
 {
+    [SerializeField] bool useSensor;
 
     // Creating an instance of the pd patch we will communicate with
     public LibPdInstance pdPatch;
@@ -55,7 +56,14 @@ public class AmbientToBPM : MonoBehaviour
     void Update()
     {
         // The BPM float from the user object is acessed each update cycle and syncronized with the internal BPM float
+        if (useSensor)
+        {
         SensorBPM = playerBPM.GetComponent<PulseReceiver>().BPM;
+        }
+        else
+        {
+            SensorBPM = 80;
+        }
 
         // By using the lipPD library we send the BPM float to the pd patch that sends the float as a message to change the generated musics BPM
         pdPatch.SendFloat("BPM", InternalBPM);
