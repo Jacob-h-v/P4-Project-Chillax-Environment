@@ -1,6 +1,0 @@
-Sensor BPM = 80, Smoothed BPM = 80, Timestamp = 0
-Sensor BPM = 194, Smoothed BPM = 150, Timestamp = 1
-Sensor BPM = 193, Smoothed BPM = 153, Timestamp = 2
-Sensor BPM = 196, Smoothed BPM = 156, Timestamp = 3
-Sensor BPM = 196, Smoothed BPM = 158, Timestamp = 4
-Sensor BPM = 0, Smoothed BPM = 159, Timestamp = 5

@@ -58,7 +58,7 @@ public class PulseReceiver : MonoBehaviour
             // Appending the string to the textfile which means it is written behind the current text
             sw2.WriteLine(RawLogText);
 
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
