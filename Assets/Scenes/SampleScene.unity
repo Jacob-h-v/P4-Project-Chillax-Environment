@@ -4599,7 +4599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ec54c0b6c17b04a9a91e16b5629159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useSensor: 0
+  useSensor: 1
   pdPatch: {fileID: 1298072571}
   playerBPM: {fileID: 2500585982553792812}
   InternalBPM: 80
@@ -8615,7 +8615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989061707931576231, guid: 0e4c0719433cb5740b7135c64c972cb7, type: 3}
       propertyPath: newFileName
-      value: ExternalPilot
+      value: SensorOn
       objectReference: {fileID: 0}
     - target: {fileID: 989061707931576231, guid: 0e4c0719433cb5740b7135c64c972cb7, type: 3}
       propertyPath: ambientToBPM
