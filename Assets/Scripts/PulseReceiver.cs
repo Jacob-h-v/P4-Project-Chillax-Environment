@@ -52,13 +52,14 @@ public class PulseReceiver : MonoBehaviour
     {
         while (true)
         {
+            int timeNow = (int)Mathf.Round(Time.time);
             // Defining what is written on each line in the log text
-            string RawLogText = "Raw Sensor Data = " + rawSensorData + ", Timestamp = " + Time.time;
+            string RawLogText = "Raw Sensor Data = " + rawSensorData + ", Timestamp = " + timeNow;
 
             // Appending the string to the textfile which means it is written behind the current text
             sw2.WriteLine(RawLogText);
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1);
         }
     }
 
